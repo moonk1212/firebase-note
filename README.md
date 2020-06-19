@@ -117,4 +117,26 @@ const query = events.orderByChild('name')
 //이런식으로 결합가능 
 //문장이해 해보자 
 ```
-
+```javascript
+import * as firebase from 'firebase';
+/*
+{
+"users":{
+  "1": {
+  "name": "David",
+  "email": "deve@gmail.com",
+  "age":99,
+  "location":"SF",
+  "age_location":"99_SF"
+  },
+ "9": {
+  "name": "Alice",
+  "email": "alice@gmail.com",
+  "age":28
+  "location":"Berlin",
+  "age_location":"28_Berln"
+  }
+  
+}
+*/
+```
