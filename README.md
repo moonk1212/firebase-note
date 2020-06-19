@@ -140,3 +140,39 @@ import * as firebase from 'firebase';
 }
 */
 ```
+## once와 on의 차이점
+- once는 데이터 한번만 
+- on은 지속적으로
+
+## 비정규화와 정규화
+-정규화는 중복된 데이터를 줄이는 것 :RDBMS의 가장 큰 특징
+- 비정규화는 데이터를 중복시키는 것: firebase의 특징
+  - 즉 쿼리를 줄이기 위해 데이터를 중복 시킴 
+  - 대체적으로 뷰에 따라서 데이터의 구조를 만든다.
+  아래의 예시 참고
+  ```json
+  "locationEvents":{
+  "SF": {
+    "fm":{
+      "name":"Firebase Meetup",
+      "timestamp": "12333",
+      "location" :"SF"
+      },
+    },
+    "BER":{
+    "fbs":{
+      "name":"Firebase Dev",
+      "timestamp" : "1635",
+      "location" :"BER"
+    }
+   }
+  }
+  ```
+  -locationEvent를 사용하여 SF,BER을 키로 생각하고 location정보에 SF와 BER저장
+  그래서 밑에 처럼 사용한다. 
+  ```javascript
+  const ref= firebase.database()l,ref();
+  const berEvents = ref.child('locationEvents/BER');
+  berEvents.on('child_added',snap => {
+  });
+  ```
