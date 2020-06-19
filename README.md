@@ -176,3 +176,33 @@ import * as firebase from 'firebase';
   berEvents.on('child_added',snap => {
   });
   ```
+## 데이터의 일관성
+
+- 비정규화를 하면 데이터의 중복을 줘서 복잡한 쿼리를 짜지 않아도 됨'
+- 하지만 문제가 생김 데이터가 바뀌었을 때 데이터의 일관성이 사라질 수도 있음
+- 이것을 해주는 것이 다중 경로 갱신
+
+## 다중 경로 갱신
+
+- 비정규화와 일관성을 연결하는 것
+- lookuptable을 만들면됨
+```json
+"userEvents": {
+
+"$uid":{
+  "$eventId":true
+  }
+}
+
+```
+-위의 코드 내용이 아래의 코드 내용
+
+```json
+"userEvents": {
+  "1":{
+  "fm":true,
+  "other":true,
+  "coolEvent":true,
+  }
+}
+```
