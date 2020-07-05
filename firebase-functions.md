@@ -15,6 +15,15 @@
  - FaaS (Function as a Service) : FaaS 는 프로젝트를 여러개의 함수로 쪼개서 (혹은 한개의 함수로 만들어서), 매우 거대하고 분산된 컴퓨팅 자원에 여러분이 준비해둔 함수를 등록하고, 
  
  이 함수들이 실행되는 횟수 (그리고 실행된 시간) 만큼 비용을 내는 방식
-##  
+## Rules for terminating a Cloud function
+
+  1. HTTP triggers - send a response at the end
   
+  https://www.youtube.com/watch?v=7IkUgCLr5oA&feature=youtu.be
+  
+  2. Background triggers -return a promise
+  
+  https://www.youtube.com/watch?v=652XeeKNHSk
+  
+    
   
